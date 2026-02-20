@@ -1,0 +1,14 @@
+{%- set countries = ["France", "Spain", "Germany", "United States"] -%}
+
+SELECT
+{%- for country in countries %}
+{%- if " " in country %}
+{%- set country_underscore = country.replace(" ", "_") %}
+count(case when name = '{{country_underscore}}' then name end) as {{country_underscore}}_amount
+{%- else %}
+count(case when name = '{{country}}' then name end) as {{country}}_amount
+{% endif %}
+{%- if not loop.last %}, {% endif -%}
+{% endfor %}
+from {{ ref('country_code_final') }}
+
