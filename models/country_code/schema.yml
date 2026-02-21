@@ -1,0 +1,11 @@
+version: 2
+
+models: 
+  - name: country_code_final
+    description: "raw_data_country_name"
+    columns: 
+      - name: name
+        description: country
+        tests: 
+          - not null
+          - switzerland

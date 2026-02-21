@@ -6,5 +6,17 @@ sources:
     database: COVID19_Epidemiological_Data
     schema: PUBLIC
     tables:
-      - name: DEMOGRAPHICS
-        description: 'That is another test.'
+    - name: DEMOGRAPHICS
+      description: 'That is another test.'
+
+  - name: COVID19_Epidemiological_Data_APPLE_MOBILITY
+    description: "A starter dbt model"
+    database: COVID19_Epidemiological_Data
+    schema: PUBLIC
+    tables:
+      - name: SOME_TABLE
+        description: "Eine Beispiel-Tabelle"
+        columns:
+          - name: country_region
+            tests:
+              - switzerland
